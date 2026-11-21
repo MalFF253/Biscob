@@ -1,0 +1,124 @@
+# Intervalo en segundos entre cada anuncio automático
+announcer:
+  enabled: true
+  interval-seconds: 300
+  sound: true
+  messages:
+    - "&8&m----------------------------------------\n&6&lBISCOB &8» &fRecuerda visitar nuestra tienda oficial en &6tienda.biscob.com\n&8&m----------------------------------------"
+    - "&8&m----------------------------------------\n&6&lBISCOB &8» &f¿Necesitas ayuda de un miembro del Staff? Usa &6/soporte <mensaje>\n&8&m----------------------------------------"
+    - "&8&m----------------------------------------\n&6&lBISCOB &8» &fEvita estafas al comerciar con otros jugadores usando &6/trade <jugador>\n&8&m----------------------------------------"
+    - "&8&m----------------------------------------\n&6&lBISCOB &8» &fUsa &6/shop &fpara comprar y vender recursos en el servidor.\n&8&m----------------------------------------"
+
+support:
+  staff-groups:
+    - "helper"
+    - "mod"
+    - "admin"
+    - "owner"
+
+trade:
+  max-distance: 25.0
+
+dimensions:
+  end:
+    enabled: false
+    deny-message: "&6&lBISCOB &8» &c¡El acceso al End se encuentra cerrado temporalmente!"
+    broadcast-on: "&8&m----------------------------------------\n&6&lBISCOB &8» &a¡El portal al &5&lEND &aha sido &lABIERTO&a!\n&8&m----------------------------------------"
+    broadcast-off: "&8&m----------------------------------------\n&6&lBISCOB &8» &c¡El acceso al &5&lEND &cha sido &lCERRADO&c!\n&8&m----------------------------------------"
+  nether:
+    enabled: true
+    deny-message: "&6&lBISCOB &8» &c¡El acceso al Nether se encuentra cerrado temporalmente!"
+    broadcast-on: "&8&m----------------------------------------\n&6&lBISCOB &8» &a¡El acceso al &4&lNETHER &aha sido &lABIERTO&a!\n&8&m----------------------------------------"
+    broadcast-off: "&8&m----------------------------------------\n&6&lBISCOB &8» &c¡El acceso al &4&lNETHER &cha sido &lCERRADO&c!\n&8&m----------------------------------------"
+
+  locator-bar:
+    enabled: true
+    range: 200.0
+
+levels:
+  menu-title: "&8Niveles de Jugador (Pág. %page%)"
+  tab-format-enabled: true
+  tab-prefix: "&8[&6%level%&8] &r"
+  levelup-broadcast: "&8&m----------------------------------------\n&6&lBISCOB &8» &f¡El jugador &6%player% &fha subido al &e&lNivel %level%&f!\n&8&m----------------------------------------"
+  rewards:
+    2:
+      money: 1000.0
+      description:
+        - "&a+ $1,000 Monedas"
+        - "&e+ x2 Manzanas Doradas"
+      commands:
+        - "give %player% golden_apple 2"
+        - "eco give %player% 1000"
+    3:
+      money: 2000.0
+      description:
+        - "&a+ $2,000 Monedas"
+        #- "&b+ x1 Item Custom de ExecutableItems"
+      commands:
+        - "ei give %player% id_de_tu_item 1"
+        - "eco give %player% 1000"
+    4:
+      money: 2000.0
+      description:
+        - "&a+ $2,000 Monedas"
+        #- "&b+ x1 Item Custom de ExecutableItems"
+      commands:
+        - "ei give %player% id_de_tu_item 1"
+        - "eco give %player% 1000"
+    # ... niveles 4 al 9 ...
+    5:
+      money: 2000.0
+      description:
+        - "&a+ $2,000 Monedas"
+        #- "&b+ x1 Item Custom de ExecutableItems"
+      commands:
+        - "ei give %player% id_de_tu_item 1"
+        - "eco give %player% 1000"
+    # ... niveles 4 al 9 ...
+    6:
+      money: 2000.0
+      description:
+        - "&a+ $2,000 Monedas"
+        #- "&b+ x1 Item Custom de ExecutableItems"
+      commands:
+        - "ei give %player% id_de_tu_item 1"
+        - "eco give %player% 1000"
+    # ... niveles 4 al 9 ...
+    7:
+      money: 2000.0
+      description:
+        - "&a+ $2,000 Monedas"
+        #- "&b+ x1 Item Custom de ExecutableItems"
+      commands:
+        - "ei give %player% id_de_tu_item 1"
+        - "eco give %player% 1000"
+    # ... niveles 4 al 9 ...
+    8:
+      money: 2000.0
+      description:
+        - "&a+ $2,000 Monedas"
+        #- "&b+ x1 Item Custom de ExecutableItems"
+      commands:
+        - "ei give %player% id_de_tu_item 1"
+        - "eco give %player% 1000"
+    # ... niveles 4 al 9 ...
+    9:
+      money: 2000.0
+      description:
+        - "&a+ $2,000 Monedas"
+        #- "&b+ x1 Item Custom de ExecutableItems"
+      commands:
+        - "ei give %player% id_de_tu_item 1"
+        - "eco give %player% 1000"
+    # ... niveles 4 al 9 ...
+
+    10:
+      money: 20000.0
+      description:
+        - "&a+ $20,000 Monedas"
+        #- "&6+ x1 Amuleto / Item Custom (ExecutableItems)"
+      commands:
+        - ei give %player% exp+30 1
+        - ei give %player% dinero_1000 4
+        - crates givekey llave3 %player%  5
+

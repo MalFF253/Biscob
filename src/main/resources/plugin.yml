@@ -1,0 +1,37 @@
+name: Biscob
+version: 1.0
+main: com.biscob.core.Biscob
+api-version: '1.21'
+folia-supported: true
+softdepend: [LuckPerms, Vault, PlaceholderAPI]
+
+commands:
+  biscobreload:
+    description: Recarga la configuracion del plugin Biscob
+  soporte:
+    description: Solicita ayuda al staff o gestiona tickets de soporte
+    aliases: [ayuda, ticket]
+  trade:
+    description: Intercambia items de forma segura con otro jugador
+    aliases: [intercambio, comerciar]
+  end:
+    description: Activa o desactiva el acceso al End
+  nether:
+    description: Activa o desactiva el acceso al Nether
+  locatorbar:
+    description: Configura la distancia maxima de la Locator Bar
+    aliases: [lbar, radar]
+  nivel:
+    description: Abre el menu de niveles y recompensas
+    aliases: [niveles, level, levels]
+
+permissions:
+  biscob.admin:
+    description: Acceso total a todos los comandos administrativos de Biscob
+    default: op
+  biscob.level.admin:
+    description: Permite gestionar niveles, EXP y boosts de experiencia
+    default: op
+  biscob.staff:
+    description: Permite recibir y atender tickets de /soporte
+    default: op
