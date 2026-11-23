@@ -1,3 +1,12 @@
+
+mysql:
+  host: "mia.gsdb.qorehost.com"
+  port: 3306
+  database: "s147_server"
+  username: "u147_w66TCjSmFM"
+  password: "B.oQEg3ZGG^@LXCJ1YMItjIs"
+
+
 # Intervalo en segundos entre cada anuncio automático
 announcer:
   enabled: true
@@ -8,6 +17,11 @@ announcer:
     - "&8&m----------------------------------------\n&6&lBISCOB &8» &f¿Necesitas ayuda de un miembro del Staff? Usa &6/soporte <mensaje>\n&8&m----------------------------------------"
     - "&8&m----------------------------------------\n&6&lBISCOB &8» &fEvita estafas al comerciar con otros jugadores usando &6/trade <jugador>\n&8&m----------------------------------------"
     - "&8&m----------------------------------------\n&6&lBISCOB &8» &fUsa &6/shop &fpara comprar y vender recursos en el servidor.\n&8&m----------------------------------------"
+    - "&8&m----------------------------------------\n&6&lBISCOB &8» &fViste algun tramposo? reportalo con &6/report &ftambien lo puedes reportar en nuestro &6/discord&f.\n&8&m----------------------------------------"
+    - "&8&m----------------------------------------\n&6&lBISCOB &8» &fPuedes vender objetos a traves de la tienda global &6/ah &f.\n&8&m----------------------------------------"
+    - "&8&m----------------------------------------\n&6&lBISCOB &8» &fTenemos chat de voz integrado, se necesita el mod SimpleVoiceChat.\n&8&m----------------------------------------"
+    - "&8&m----------------------------------------\n&6&lBISCOB &8» &fPedes ganar dinero con los trabajos de &6/jobs &f.\n&8&m----------------------------------------"
+    - "&8&m----------------------------------------\n&6&lBISCOB &8» &fConsigue reputacion con cada hora de juego y sube de &6/nivel &fpara conseguir recompensas.\n&8&m----------------------------------------"
 
 support:
   staff-groups:
@@ -41,84 +55,119 @@ levels:
   tab-prefix: "&8[&6%level%&8] &r"
   levelup-broadcast: "&8&m----------------------------------------\n&6&lBISCOB &8» &f¡El jugador &6%player% &fha subido al &e&lNivel %level%&f!\n&8&m----------------------------------------"
   rewards:
-    2:
-      money: 1000.0
+    '2':
+      money: 0.0
       description:
-        - "&a+ $1,000 Monedas"
-        - "&e+ x2 Manzanas Doradas"
+        - "&6+ x1 Rango VIP (1 Día)"
+        - "&e+ x1 EXP (+16)"
+        - "&a+ $1,000"
+        - "&6+ x3 Llave Comun"
       commands:
-        - "give %player% golden_apple 2"
-        - "eco give %player% 1000"
-    3:
-      money: 2000.0
+        - "ei give %player% vip_1d 1"
+        - "ei give %player% exp+16 1"
+        - "ei give %player% dinero_1000 1"
+        - "crates givekey llave1 %player% 3"
+    '3':
+      money: 0.0
       description:
-        - "&a+ $2,000 Monedas"
-        #- "&b+ x1 Item Custom de ExecutableItems"
+        - "&a+ $1,000"
+        - "&e+ x1 EXP (+30)"
+        - "&6+ x5 Llave Comun"
+        - "&6+ x1 Llave Rara"
       commands:
-        - "ei give %player% id_de_tu_item 1"
-        - "eco give %player% 1000"
-    4:
-      money: 2000.0
+        - "ei give %player% dinero_1000 1"
+        - "ei give %player% exp+30 1"
+        - "crates givekey llave1 %player% 5"
+        - "crates givekey llave2 %player% 1"
+    '4':
+      money: 0.0
       description:
-        - "&a+ $2,000 Monedas"
-        #- "&b+ x1 Item Custom de ExecutableItems"
+        - "&6+ x1 Rango VIP (1 Día)"
+        - "&e+ x2 EXP (+30)"
+        - "&a+ $1,000"
+        - "&6+ x2 Llave Rara"
       commands:
-        - "ei give %player% id_de_tu_item 1"
-        - "eco give %player% 1000"
-    # ... niveles 4 al 9 ...
-    5:
-      money: 2000.0
+        - "ei give %player% vip_1d 1"
+        - "ei give %player% exp+30 2"
+        - "ei give %player% dinero_1000 1"
+        - "crates givekey llave2 %player% 2"
+    '5':
+      money: 0.0
       description:
-        - "&a+ $2,000 Monedas"
-        #- "&b+ x1 Item Custom de ExecutableItems"
+        - "&e+ x2 EXP (+30)"
+        - "&a+ $2,000"
+        - "&6+ x3 Llave Rara"
       commands:
-        - "ei give %player% id_de_tu_item 1"
-        - "eco give %player% 1000"
-    # ... niveles 4 al 9 ...
-    6:
-      money: 2000.0
+        - "ei give %player% dinero_1000 2"
+        - "ei give %player% exp+30 2"
+        - "crates givekey llave2 %player% 3"
+    '6':
+      money: 0.0
       description:
-        - "&a+ $2,000 Monedas"
-        #- "&b+ x1 Item Custom de ExecutableItems"
+        - "&e+ x2 EXP (+30)"
+        - "&a+ $2,000 en Billetes"
+        - "&6+ x4 Llave Rara"
       commands:
-        - "ei give %player% id_de_tu_item 1"
-        - "eco give %player% 1000"
-    # ... niveles 4 al 9 ...
-    7:
-      money: 2000.0
+        - "ei give %player% exp+30 2"
+        - "ei give %player% dinero_1000 2"
+        - "crates givekey llave2 %player% 4"
+    '7':
+      money: 0.0
       description:
-        - "&a+ $2,000 Monedas"
-        #- "&b+ x1 Item Custom de ExecutableItems"
+        - "&e+ x1 EXP (+30)"
+        - "&a+ $2,000 en Billetes"
+        - "&6+ x5 Llave Rara"
       commands:
-        - "ei give %player% id_de_tu_item 1"
-        - "eco give %player% 1000"
-    # ... niveles 4 al 9 ...
-    8:
-      money: 2000.0
+        - "ei give %player% dinero_1000 2"
+        - "ei give %player% exp+30 1"
+        - "crates givekey llave2 %player% 5"
+    '8':
+      money: 0.0
       description:
-        - "&a+ $2,000 Monedas"
-        #- "&b+ x1 Item Custom de ExecutableItems"
+        - "&e+ x1 EXP (+30)"
+        - "&a+ $3,000 en Billetes"
+        - "&6+ x2 Llave OP"
       commands:
-        - "ei give %player% id_de_tu_item 1"
-        - "eco give %player% 1000"
-    # ... niveles 4 al 9 ...
-    9:
-      money: 2000.0
+        - "ei give %player% exp+30 1"
+        - "ei give %player% dinero_1000 3"
+        - "crates givekey llave3 %player% 2"
+    '9':
+      money: 0.0
       description:
-        - "&a+ $2,000 Monedas"
-        #- "&b+ x1 Item Custom de ExecutableItems"
+        - "&a+ $5,000 en Billetes"
+        - "&6+ x3 Llave OP"
       commands:
-        - "ei give %player% id_de_tu_item 1"
-        - "eco give %player% 1000"
-    # ... niveles 4 al 9 ...
+        - "ei give %player% dinero_5000 4"
+        - "crates givekey llave3 %player% 3"
+    '10':
+      money: 0.0
+      description:
+        - "&e+ x1 Frasco de Experiencia (+30)"
+        - "&a+ $4,000 en Billetes"
+        - "&6+ x5 Llave OP"
+      commands:
+        - "ei give %player% exp+30 1"
+        - "ei give %player% dinero_1000 4"
+        - "crates givekey llave3 %player% 5"
 
-    10:
-      money: 20000.0
-      description:
-        - "&a+ $20,000 Monedas"
-        #- "&6+ x1 Amuleto / Item Custom (ExecutableItems)"
-      commands:
-        - ei give %player% exp+30 1
-        - ei give %player% dinero_1000 4
-        - crates givekey llave3 %player%  5
+  afk-bypass-groups:
+    - vip2
+    - admin
+  locator-bar:
+    enabled: true
+    range: 200.0
+restrictions:
+  disable-placing-crystals: true
+  disable-placing-anchors: true
+  disable-ender-crystals: true
+  disable-respawn-anchors: true
 
+end-reset:
+  interval-hours: 168
+  end-world: "the_end"
+  spawn-world: "world"
+  worlds-command: "world regenerate %world% --seed --confirm"
+  messages:
+    evacuated: "§6[Biscob] §fEl End se está reiniciando con una nueva semilla. Has sido llevado al spawn."
+    offline-teleport: "§6[Biscob] §fEl End se reinició mientras estabas desconectado. Has sido llevado al spawn."
+    broadcast-done: "§6[Biscob] §f¡El End ha sido regenerado con una nueva semilla!"

@@ -325,7 +325,9 @@ public class LevelSystem implements Listener, CommandExecutor, TabCompleter {
     private void loadPlayer(Player player) {
         Bukkit.getAsyncScheduler().runNow(plugin, task -> {
             DatabaseManager.PlayerLevelData data = db.loadPlayerLevel(player.getUniqueId());
+            data.username = player.getName();
             cache.put(player.getUniqueId(), data);
+            db.savePlayerLevelAsync(player.getUniqueId(), data);
             player.getScheduler().run(plugin, t -> {
                 lastMinuteLocation.put(player.getUniqueId(), player.getLocation());
                 updateTabList(player);

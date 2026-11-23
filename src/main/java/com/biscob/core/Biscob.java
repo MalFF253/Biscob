@@ -1,5 +1,6 @@
 package com.biscob.core;
 
+import com.biscob.core.endreset.EndResetManager;
 import com.biscob.core.levelsystem.BiscobPlaceholder;
 import com.biscob.core.levelsystem.LevelSystem;
 import net.luckperms.api.LuckPerms;
@@ -28,7 +29,6 @@ public class Biscob extends JavaPlugin implements Listener {
     private AnnouncerTask announcerTask;
     private TradeManager tradeManager;
     private LocatorBarManager locatorBarManager;
-    private CraftingRestrictionManager craftingRestrictionManager;
     private LevelSystem levelSystem;
 
     @Override
@@ -50,11 +50,12 @@ public class Biscob extends JavaPlugin implements Listener {
         announcerTask.start();
 
         SupportManager supportManager = new SupportManager(this);
+        StaffChatManager staffChatManager = new StaffChatManager(this);
         tradeManager = new TradeManager(this);
         DimensionManager dimensionManager = new DimensionManager(this, databaseManager);
         locatorBarManager = new LocatorBarManager(this);
         BlockManager blockManager = new BlockManager(this);
-        craftingRestrictionManager = new CraftingRestrictionManager(this);
+        CraftingRestrictionManager craftingRestrictionManager = new CraftingRestrictionManager(this);
         levelSystem = new LevelSystem(this, databaseManager);
 
         Bukkit.getPluginManager().registerEvents(this, this);
@@ -65,6 +66,16 @@ public class Biscob extends JavaPlugin implements Listener {
         Bukkit.getPluginManager().registerEvents(blockManager, this);
         Bukkit.getPluginManager().registerEvents(craftingRestrictionManager, this);
         Bukkit.getPluginManager().registerEvents(levelSystem, this);
+        Bukkit.getPluginManager().registerEvents(staffChatManager, this);
+
+        EndResetManager endResetManager = new EndResetManager(this);
+        endResetManager.start();
+        getServer().getPluginManager().registerEvents(endResetManager, this);
+        getCommand("resetend").setExecutor(endResetManager);
+
+        PvpToggleCommand pvpCommand = new PvpToggleCommand();
+        getCommand("pvp").setExecutor(pvpCommand);
+        getServer().getPluginManager().registerEvents(pvpCommand, this);
 
         // Intento 1: Registrar PlaceholderAPI inmediatamente si ya está activo
         registerPlaceholders();

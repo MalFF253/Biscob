@@ -24,6 +24,14 @@ commands:
   nivel:
     description: Abre el menu de niveles y recompensas
     aliases: [niveles, level, levels]
+  resetend:
+    description: Fuerza el reinicio del End ahora mismo
+    permission: biscob.endreset
+  pvp:
+    description: Activa o desactiva el PvP temporalmente
+    usage: /pvp [on|off]
+    permission: biscob.pvp.toggle
+
 
 permissions:
   biscob.admin:
